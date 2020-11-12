@@ -1,0 +1,35 @@
+﻿@model  MVCcrud.Models.ViewModels.TablaViewModel
+@{
+    ViewBag.Title = "EDIT";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Tabla", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d=>d.id)
+            <div style="margin-top:15px">
+                @Html.LabelFor(d => d.Name)
+                @Html.TextBoxFor(d => d.Name, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Name, null, new { @style = "color:red" })
+            </div>
+            <div style="margin-top:15px">
+                @Html.LabelFor(d => d.Email)
+                @Html.TextBoxFor(d => d.Email, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Email, null, new { @style = "color:red" })
+            </div>
+            <div style="margin-top:15px">
+                @Html.LabelFor(d => d.Fecha_nacimiento)
+                @Html.EditorFor(d => d.Fecha_nacimiento, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Fecha_nacimiento, null, new { @style = "color:red" })
+            </div>
+            <div style="text-align:right; padding:5px">
+                <input value="Save" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+
+    </div>
+}
+

@@ -1,0 +1,37 @@
+﻿@model List<MVCcrud.Models.ViewModels.ListTableViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+    <div class="row" style="text-align:right;padding:5px;">
+    <a href="~/tabla/newreg" class="btn btn-primary" >NEW</a>
+    </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>#</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td><a></a></td>
+            </tr>
+                        @foreach (var oelemeto in Model)
+                         {
+        <tr>
+            <td>@oelemeto.id</td>
+            <td>@oelemeto.name</td>
+            <td>@oelemeto.Email</td>
+            <td><a class="btn btn-secondary"href="~/Tabla/edit/@oelemeto.id">Edit</a></td>
+            <td><a class="btn btn-danger" href="~/Tabla/delete/@oelemeto.id">Delete</a></td>
+        </tr>
+
+                         }
+                
+            </table>
+        </div>
+
+    </div>
